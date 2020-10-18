@@ -1,0 +1,48 @@
+.tooltip {
+	position: absolute;
+	bottom: 45px;
+	left: 80px;
+	width: 80px;
+	height: 80px;
+	z-index: -1;
+
+	text-transform: uppercase;
+	font-size: 18px;
+	font-family: "Neucha", cursive;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+
+	transform: rotate(20deg);
+
+	display: none;
+
+	span {
+		position: absolute;
+		display: block;
+		top: 50%;
+		padding-top: 60%;
+		transform-origin: 50% 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.tooltip {
+		display: block;
+	}
+}
+
+@media (max-width: 500px) {
+	.main-page {
+		.tooltip {
+			bottom: 145px;
+			transform: rotate(-18deg);
+
+			span {
+				top: 0;
+				padding-top: 0;
+				bottom: 50%;
+				padding-bottom: 90%;
+				transform-origin: 0 100%;
+			}
+		}
+	}
+}

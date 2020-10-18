@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Акваргрим и детские праздники (Екатеринбург, Челябинск)" />
+	<meta name="keywords" content="аквагрим, nastiprazdnik, настипроздник, праздник, аниматор, визаж, xеллоуин, halloween, боди-арт, body-art, фейс-арт,
+		   face-art, бодиарт, фейсарт, bodyart, бодиарт, десткий праздник, день рождения">
+	<title>Nastiprazdnik - Reviews</title>
+	<link rel="stylesheet" href="css/style.min.css" />
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+
+<body class="reviews">
+	<script src="../js/loadIcon.js"></script>
+
+	<a href="index" class="main-page-link"></a>
+
+	<div class="reviews__wrapper">
+
+		<section class="reviews__add">
+			<h2>Добавить отзыв</h2>
+			<form action="php/addReview.php" method="POST" enctype="multipart/form-data" class="reviews__form">
+				<div class="reviews__form--avatar">
+					Выберите аватар
+				</div>
+				<input type="text" name="author" placeholder="Ваше имя" maxlength="30" />
+				<div class="reviews__form--text" contenteditable="true"></div>
+				<input type="file" class="reviews__form--btn" id="filePicture" accept="image/*" multiple />
+				<div class="reviews__form-pictures"></div>
+				<label for="filePicture" class="reviews__form-btn reviews__form-btn--picture">
+					<span class="tooltip reviews__tooltip">Прикрепить</span>
+				</label>
+				<button type="submit" class="reviews__form-btn reviews__form-btn--submit"><span
+						  class="tooltip reviews__tooltip">Отправить</span></button>
+			</form>
+		</section>
+
+		<section class="reviews__list">
+		</section>
+	</div>
+
+	<div class="overlay"></div>
+
+	<div class="reviews__modal">
+		<div class="reviews__modal-color-picker">
+			<span style="background-image: url('img/colors/FF0414.svg');" data-color="#FF0414"></span>
+			<span style="background-image: url('img/colors/FF8808.svg');" data-color="#FF8808"></span>
+			<span style="background-image: url('img/colors/F6FF00.svg');" data-color="#F6FF00"></span>
+			<span style="background-image: url('img/colors/00EB89.svg');" data-color="#00EB89"></span>
+			<span style="background-image: url('img/colors/00E1FA.svg');" data-color="#00E1FA"></span>
+			<span class="selected" style="background-image: url('img/colors/1430FF.svg');" data-color="#1430FF"></span>
+			<span style="background-image: url('img/colors/E80797.svg');" data-color="#E80797"></span>
+		</div>
+	</div>
+
+	<div class="alert">
+		<div class="alert__girl"></div>
+		<div class="alert__notice">Не материться билять!</div>
+	</div>
+
+	<div class="overlay"></div>
+	<div class="modal-photo">
+		<button class="modal-photo__btn modal-photo__btn--prev" data-direction="-1"></button>
+		<button class="modal-photo__btn modal-photo__btn--next" data-direction="1"></button>
+		<div class="modal-photo__blur"></div>
+	</div>
+
+	<div class="inner-contacts">
+		<div class="inner-contacts__phone"></div>
+		<ul class="inner-contacts__list">
+			<li>
+				<a href="https://vk.com/nastiprazdnik" target="_blank"
+				   class="inner-contacts__link inner-contacts__link--vk" data-top="-110px" data-left="20px"></a>
+			</li>
+			<li>
+				<a href="https://instagram.com/nastiprazdnik" target="_blank"
+				   class="inner-contacts__link inner-contacts__link--inst" data-top="-80px" data-left="-75px"></a>
+			</li>
+			<li>
+				<a href="tel:+79517841547" target="_blank" class="inner-contacts__link inner-contacts__link--tel"
+				   data-top="35px" data-left="-105px"><span class="inner-contacts__link--tel-number">+7 (951) 784
+						1547</span></a>
+			</li>
+		</ul>
+	</div>
+
+	<script type="module" src="js/addReview.js"></script>
+	<script type="module">
+		window.addEventListener("resize", function () {
+			let modal = document.querySelector(".modal-photo"),
+				images = modal.querySelectorAll("img");
+
+			if (
+				document.documentElement.clientWidth > 500 &&
+				document.documentElement.clientHeight <= 768 &&
+				images.length
+			) {
+				modal.style.width = modal.querySelectorAll("img")[1].clientWidth + "px";
+			} else {
+				modal.style.width = "";
+			}
+		});
+	</script>
+	<script src="js/tooltips.js"></script>
+	<script src="js/innerContacts.js"></script>
+</body>
+
+</html>

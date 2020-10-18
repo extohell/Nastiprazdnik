@@ -1,0 +1,80 @@
+.gallery-album {
+	padding-top: 30px;
+	padding-bottom: 40px;
+
+	background-size: 700px 700px;
+	background-position: -30px 0;
+
+	&__album {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 30px;
+
+		width: 70%;
+		margin: 0 auto;
+		margin-bottom: 0;
+		padding: 30px;
+
+		overflow: hidden;
+
+		.gallery-album__photo {
+			height: 190px;
+
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: cover;
+			box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.9);
+			background-color: #ffffff;
+
+			&:hover {
+				transform: scale(1.05);
+				box-shadow: 8px 8px 15px #000000;
+			}
+		}
+	}
+
+	.main-page-link {
+		position: fixed;
+
+		&:hover {
+			&::after {
+				content: "В галерею";
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.gallery-album {
+		padding-top: 45px;
+
+		&__album {
+			width: 85%;
+		}
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 768px) {
+	.gallery-album {
+		padding-top: 50px;
+
+		&__album {
+			width: 85%;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.gallery-album {
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.gallery-album {
+		background-image: url("../img/photo-bg.svg");
+		background-size: 700px 700px;
+		background-position-x: -30px;
+		background-repeat: repeat;
+	}
+}

@@ -1,0 +1,32 @@
+@font-face {
+	font-family: Neucha;
+	font-weight: normal;
+	font-style: cursive;
+	src: url("../fonts/neucha-v11-latin_cyrillic-regular.woff") format("woff"),
+		url("../fonts/neucha-v11-latin_cyrillic-regular.woff2") format("woff2");
+}
+
+h2 {
+	font-size: 0;
+}
+
+body,
+* {
+	cursor: url("../img/girl_cursor.cur"), pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@import "_tooltip";
+@import "_loadIcon";
+@import "inner-contacts";
+@import "main-page-link";
+@import "_carousel";
+@import "modal-photo";
+@import "_main-page";
+@import "additional-info";
+@import "_about-me";
+@import "_gallery";
+@import "_album";
+@import "_contacts";
+@import "_alert";
+@import "_reviews";

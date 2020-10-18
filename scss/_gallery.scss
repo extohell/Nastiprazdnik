@@ -1,0 +1,208 @@
+.gallery {
+	padding-bottom: 80px;
+
+	background-image: url("../img/photo-bg.svg");
+	background-size: 700px 700px;
+	background-position-x: -30px;
+
+	.carousel {
+		margin-bottom: 20px;
+	}
+
+	&__wrapper {
+		margin: 0 auto;
+		width: 65%;
+		max-width: 1200px;
+	}
+}
+
+.albums {
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 70px;
+
+		list-style: none;
+	}
+
+	&__item {
+		position: relative;
+
+		width: 30%;
+		max-width: 270px;
+
+		box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.9);
+
+		transition: all 0.5s;
+		transform-origin: 50% 50%;
+
+		&:before {
+			content: "";
+			display: block;
+			padding-top: 120%;
+		}
+
+		&:hover {
+			box-shadow: 3px 3px 8px rgba($color: #000000, $alpha: 0.8),
+				8px 8px 20px rgba($color: #000000, $alpha: 0.9);
+
+			transform: scale(1.05);
+
+			.albums__link-foto {
+				transform: scale(1.25);
+			}
+		}
+	}
+
+	&__link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		border: 22px solid rgba($color: #ffffff, $alpha: 0.9);
+		border-bottom-width: 60px;
+		box-shadow: inset 0 0 10px #000000;
+
+		&-name {
+			position: absolute;
+			z-index: 2;
+			bottom: -40px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			font-size: 18px;
+			font-family: "Neucha", cursive;
+			color: #000000;
+			text-transform: uppercase;
+			text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+		}
+	}
+
+	&__link-foto {
+		position: relative;
+		z-index: -1;
+
+		width: 100%;
+		height: 100%;
+
+		transition: all 0.5s;
+		transform-origin: 50% 50%;
+
+		background-repeat: no-repeat;
+
+		&-wrapper {
+			width: 100%;
+			height: 100%;
+
+			overflow: hidden;
+		}
+
+		&--children {
+			background-image: url("../img/gallery/links/child.jpg");
+			background-size: cover;
+		}
+
+		&--fotosessions {
+			background-image: url("../img/gallery/links/fotosession.jpg");
+			background-size: 200%;
+			background-position: 50% 38%;
+		}
+
+		&--adults {
+			background-image: url("../img/gallery/links/adult.jpg");
+			background-size: 140%;
+			background-position: 55% 45%;
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	.gallery {
+		&__wrapper {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.gallery {
+		&__wrapper {
+			width: 75%;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.gallery {
+		padding-top: 30px;
+
+		&__wrapper {
+			width: 85%;
+
+			.albums__link {
+				border-width: 18px 18px 50px 18px;
+
+				&-name {
+					bottom: -35px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.gallery {
+		&__wrapper {
+			.albums {
+				&__list {
+					margin-bottom: 40px;
+				}
+
+				&__link {
+					border-width: 16px 16px 45px 16px;
+
+					&-name {
+						bottom: -32px;
+
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.gallery {
+		padding-top: 70px;
+
+		.carousel {
+			margin-bottom: 40px;
+		}
+
+		&__wrapper {
+			.albums {
+				&__list {
+					flex-wrap: wrap;
+					margin-bottom: 30px;
+				}
+
+				&__item {
+					width: 70%;
+					margin: 0 auto;
+					max-width: 100%;
+					margin-bottom: 20px;
+
+					&::before {
+						padding-top: 120%;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+.alert {
+	position: fixed;
+	left: -200px;
+	top: 30%;
+
+	transition: transform 0.8s;
+
+	&__girl {
+		width: 180px;
+		height: 200px;
+
+		background-image: url("../img/girl.svg");
+		background-repeat: no-repeat;
+
+		transform: rotate(50deg);
+	}
+
+	&__notice {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		right: -230px;
+		top: -90px;
+
+		width: 220px;
+		height: 130px;
+		padding: 0 10px;
+
+		border: 2px solid #000000;
+		border-radius: 50%;
+		background-color: #ffffff;
+
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-family: "Neucha", cursive;
+
+		opacity: 0;
+		transition: opacity 0.5s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 18px;
+			bottom: 2px;
+
+			width: 30px;
+			height: 30px;
+
+			border: 2px solid #000000;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			background-color: #ffffff;
+
+			transform: skewX(-35deg) rotate(-23deg);
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.alert {
+		&__girl {
+			width: 150px;
+			height: 170px;
+		}
+
+		&__notice {
+			right: -200px;
+			top: -65px;
+
+			width: 190px;
+			height: 100px;
+
+			&::before {
+				left: 18px;
+				bottom: 4px;
+
+				width: 20px;
+				height: 20px;
+
+				transform: skewX(-35deg) rotate(-26deg);
+			}
+		}
+	}
+}
